@@ -10,8 +10,9 @@ module SidekiqLatencyApi
     def queue_latencies
       Sidekiq::Queue.all.map do |x|
         {
-            name: x.name,
-            latency: x.latency
+          name: x.name,
+          latency: x.latency,
+          count: x.count
         }
       end
     end
